@@ -8,7 +8,7 @@
   <a class="deleteButton" (click)="removeTeam()"><i class="material-icons">delete</i ></a>
 
   <div *ngFor="let team of teams" appTeam class="teams">
-    <button class="teamButton" (click)="selectTeam()">{{team}}</button>
+    <button id=team class="teamButton" (click)="selectTeam($event)">{{team}}</button>
   </div>
 
 </div>

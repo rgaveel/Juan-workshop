@@ -13,6 +13,7 @@ import { LoggerService } from './logger.service';
 export class TeamListComponent {
   newName: string;
   teams: string[] = [];
+  selectedTeam: string;
 
   constructor(public logger: LoggerService) {
   }
@@ -24,10 +25,13 @@ export class TeamListComponent {
       this.logger.tick();
     }
   }
-  selectTeam(){
+  selectTeam(team: string){
+    console.dir(team);
+    this.selectedTeam = team;
   }
-  removeTeam(team: string) {
-    this.teams.splice(this.teams.indexOf(team),1);
+
+  removeTeam() {
+    this.teams.splice(this.teams.indexOf(this.selectedTeam),1);
     this.logger.tick();
   }
 }

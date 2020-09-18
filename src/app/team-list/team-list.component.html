@@ -1,0 +1,14 @@
+<div class="team-list">
+  <h2>Teams</h2>
+
+  <input [(ngModel)]="newName"
+    matInput placeholder = "Equipo"
+    (keyup.enter)="addTeam()">
+  <button (click)="addTeam()">Agregar</button>
+  <a class="deleteButton" (click)="removeTeam()"><i class="material-icons">delete</i ></a>
+
+  <div *ngFor="let team of teams" appTeam class="teams">
+    <button class="teamButton" (click)="selectTeam()">{{team}}</button>
+  </div>
+
+</div>
